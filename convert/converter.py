@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 """
 Notes: 
 - Normalization needs to clip extreme signals to ensure audio does go completely quiet with loud noises
-- 
+- Needs ffmeg installed to work
 """
 
 
