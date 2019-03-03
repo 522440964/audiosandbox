@@ -2,6 +2,12 @@ import pydub
 import numpy as np
 import matplotlib.pyplot as plt
 
+"""
+Notes: 
+- Normalization needs to clip extreme signals to ensure audio does go completely quiet with loud noises
+- 
+"""
+
 
 def norm_signal(arr):
     # clip max sounds if discrepence too large
@@ -32,6 +38,8 @@ def audio_to_arr(fname, rate=44100):
 
     elif '.flv' in fname:
         raw = pydub.AudioSegment.from_flv(fname)
+    else:
+        print("File Format:", fname.split('.')[-1], 'is unsupported.')
 
     arr = np.array(raw.get_array_of_samples())
 
@@ -41,13 +49,16 @@ def audio_to_arr(fname, rate=44100):
 
 
 
-    arr = norm_signal(arr)
-    arr = hz_correct(arr, raw.frame_rate, rate)
 
-    return arr
+    arr = hz_correct(arr, raw.frame_rate, rate)
+    arr = norm_signal(arr)
+    length = len(arr) / rate
+
+    return arr, length
 
 if __name__ == '__main__':
-    audio_arr = audio_to_arr('samples/16kHz.wav')
+    audio_arr, length = audio_to_arr('samples/16kHz.wav')
 
+    plt.title(str(length) + " seconds")
     plt.plot(audio_arr)
     plt.show()
