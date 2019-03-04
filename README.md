@@ -20,7 +20,7 @@ Possible downsides:
     - The processing power required.
 
 
-Breakdown of methods:
+<h2>Breakdown of methods:</h2>
 
 - (Preprocessing) Text embedding to audio challenges (Goal: transformers are fed full sentences, attempt to do the same
     with audio)
