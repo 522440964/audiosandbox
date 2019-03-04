@@ -1,6 +1,6 @@
-Outline of steps for attempting NLP with audio instead of text.
+<h1>Outline of steps for attempting NLP with audio instead of text.</h1>
 
-The thought process behind the project:
+<h2>The thought process behind the project:</h2>
 
     - Tone and pitch changes inter-sentence determine importance in words far better than end markings (?, !, ., etc).
 
@@ -12,7 +12,7 @@ The thought process behind the project:
     - TL;DR: Spoken language might be a closer example to modeling meaning behind words than text.
 
 
-Possible downsides:
+<h2>Possible downsides:</h2>
 
     - Without lemitizing and vectorizing spoken words, the model could have a much harder time understanding waveforms
         instead of vectors.
@@ -20,9 +20,9 @@ Possible downsides:
     - The processing power required.
 
 
-<h2>Breakdown of methods:</h2>
+<h2>Breaking down the process:</h2>
 
-- (Preprocessing) Text embedding to audio challenges (Goal: transformers are fed full sentences, attempt to do the same
+<h3>- (Preprocessing)</h3> Text embedding to audio challenges (Goal: transformers are fed full sentences, attempt to do the same
     with audio)
 
     * Train a network to detect and label sentence starts and endings of conversational audio.
@@ -38,7 +38,7 @@ Possible downsides:
         - Big maybe.. this could result in the loss of key context and tonal data which is the whole point of going with
             audio
 
-- (Main model) Base on proven transformer architecture (specifically GPT/GPT-2)
+<h3>- (Main model)</h3> Base on proven transformer architecture (specifically GPT/GPT-2)
 
     * Training (unsupervised)
 
@@ -47,7 +47,7 @@ Possible downsides:
 
         - The answer is next N seconds of the waveform (also varying)
 
-- Data
+<h3>- Data</h3>
 
     GOAL: Diverse and large mainly containing conversational data. Both formal and informal.
 
@@ -65,7 +65,7 @@ Possible downsides:
         - audio books.
 
 
-The Plan:
+<h2>The Plan:</h2>
 
  1. Train preprocessing model
 
