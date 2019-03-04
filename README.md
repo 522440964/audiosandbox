@@ -25,7 +25,7 @@
 <h3>- (Preprocessing)</h3> Text embedding to audio challenges (Goal: transformers are fed full sentences, attempt to do the same
     with audio)
 
-    * Train a network to detect and label sentence starts and endings of conversational audio.
+    * Detect and label sentence starts and endings of conversational audio.
 
         - Use similar architecture to object detection but instead with 1dimconvo layers.
                 Output: [ [start point, endpoint, confidence], ... ]
