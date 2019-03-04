@@ -22,7 +22,7 @@
 
 <h2>Breaking down the process:</h2>
 
-<h3>- (Preprocessing)</h3> Text embedding to audio challenges (Goal: transformers are fed full sentences, attempt to do the same
+<h3>- (Preprocessing)</h3> Text embedding to audio challenges (Goal: transformers are fed full sentences, attempt to do the same. (Might forgo this step altogether.)
     with audio)
 
     * Detect and label sentence starts and endings of conversational audio.
