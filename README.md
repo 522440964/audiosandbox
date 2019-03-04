@@ -49,7 +49,7 @@
 
 <h3>- Data</h3>
 
-    GOAL: Diverse and large mainly containing conversational data. Both formal and informal.
+    GOAL: Diverse and large dataset, mainly containing conversational data. Both formal and informal.
 
     * Needs to contain wide varieties of emotion, emphasis, purpose (persuasive, questioning, debating, casual)
 
@@ -68,6 +68,8 @@
 <h2>The Plan:</h2>
 
  1. Train preprocessing model
+ 
+ 2. Use model further clean dataset (removing intros, music, non-conversational audio)
 
  2. Cultivate dataset
 
