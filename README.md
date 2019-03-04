@@ -22,21 +22,18 @@
 
 <h2>Breaking down the process:</h2>
 
-<h3>- (Preprocessing)</h3> Text embedding to audio challenges (Goal: transformers are fed full sentences, attempt to do the same. (Might forgo this step altogether.)
-    with audio)
+<h3>- (Preprocessing)</h3> Text embedding to audio challenges (Goal: transformers are fed full sentences, attempt to do the same.
+    with audio) (Might forgo this step altogether.)
 
-    * Detect and label sentence starts and endings of conversational audio.
+    * General audio cleaning and loading:
+        
+        - Load .wav .mp3 .flv .ogg to numpy arrays
+        
+        - Interpolate existing bitrate into desired bitrate to be uniform.
+        
+        - Throw out grossly undersampled audio
 
-        - Use similar architecture to object detection but instead with 1dimconvo layers.
-                Output: [ [start point, endpoint, confidence], ... ]
-
-        - This might have to be supervised. Could be problematic to collect training data...
-
-    * Possibly cluster similar patterns of audio to simply data, similar to word to vec but based on some
-        a form of the phonetic alphabet?
-
-        - Big maybe.. this could result in the loss of key context and tonal data which is the whole point of going with
-            audio
+        - Normalize audio between 1 and -1 without silencing the entire clip due to a mic bump or loud sound. (clipping peaks)
 
 <h3>- (Main model)</h3> Base on proven transformer architecture (specifically GPT/GPT-2)
 
