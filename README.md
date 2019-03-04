@@ -35,7 +35,9 @@
 
         - Normalize audio between 1 and -1 without silencing the entire clip due to a mic bump or loud sound. (clipping peaks)
 
-<h3>- (Main model)</h3> Base on proven transformer architecture (specifically GPT/GPT-2)
+<h3>- (Main model)</h3> Base on proven transformer architecture (specifically GPT/GPT-2). https://github.com/openai/gpt-2 https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf
+https://arxiv.org/abs/1706.03762
+
 
     * Training (unsupervised)
 
