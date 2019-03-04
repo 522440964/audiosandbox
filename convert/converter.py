@@ -39,7 +39,7 @@ def audio_to_arr(fname, rate=44100):
     elif '.flv' in fname:
         raw = pydub.AudioSegment.from_flv(fname)
     else:
-        print('"File Format:".' + str(fname.split('.')[-1]) + '" is unsupported.')
+        print('File Format:.' + str(fname.split('.')[-1]) + '" is unsupported.')
 
     arr = np.array(raw.get_array_of_samples())
 
