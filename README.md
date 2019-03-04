@@ -39,7 +39,7 @@
 
     * Training (unsupervised)
 
-        - Feed model similar to how entire sentences are fed to GPT, an array of the waveform (of varying length) and
+        - Feed model similar to how entire phrases are fed to GPT, an array of the waveform (of varying length) and
             an array the positional data for that waveform
 
         - The answer is next N seconds data following the waveform (also varying)
