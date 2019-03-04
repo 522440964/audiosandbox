@@ -31,7 +31,7 @@
         
         - Interpolate existing bitrate into desired bitrate to be uniform.
         
-        - Throw out grossly undersampled audio
+        - Throw out low hz audio.
 
         - Normalize audio between 1 and -1 without silencing the entire clip due to a mic bump or loud sound. (clipping peaks)
 
@@ -66,7 +66,7 @@
 
  1. Train preprocessing model
  
- 2. Use model further clean dataset (removing intros, music, non-conversational audio)
+ 2. Use model further clean and normalize dataset
 
  2. Cultivate dataset
 
