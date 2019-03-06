@@ -6,7 +6,7 @@ from internetarchive.session import ArchiveSession
 from internetarchive import get_item
 from internetarchive import download
 
-ident = 'audio_podcast'
+ident = 'podcasts'
 destifolder = 'iapodcasts'
 search = ia.search_items('collection:%s' % ident)
 current = [f for f in os.listdir(destifolder)]
