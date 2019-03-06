@@ -3,11 +3,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 import scipy.signal as sig
 import scipy.io.wavfile
-import cv2
+
 
 """
 Notes: 
 - Normalization needs to clip extreme signals to ensure audio does go completely quiet with loud noises
+- convert audio to STFT in predetermined intervals & invert back to SPL
 - Needs ffmeg installed to work
 """
 
@@ -28,7 +29,7 @@ def hz_correct(arr, curRate, newRate):
     return arr
 
 
-def audio_to_arr(fname, rate=44100):
+def audio_to_arr(fname, newrate=44100):
 
     if '.mp3' in fname:
         raw = pydub.AudioSegment.from_mp3(fname)
@@ -51,19 +52,19 @@ def audio_to_arr(fname, rate=44100):
         arr = arr.reshape((-1, chans))
         arr = arr.sum(axis=1) / chans
 
-    arr = hz_correct(arr, raw.frame_rate, rate)
+    arr = hz_correct(arr, raw.frame_rate, newrate)
     lengths = len(arr) / rate
 
     return arr, lengths
 
 
-def arr_to_stft(arr, sample_rate, nperseg=2048):
-    _, _, stft_arr = sig.stft(arr, sample_rate, nperseg=nperseg)
+def arr_to_stft(arr, sample_rate, seg=3000):
+    _, _, stft_arr = sig.stft(arr, sample_rate, nperseg=seg)
     return stft_arr
 
 
-def stft_to_arr(stft_arr, sample_rate, nperseg=2048):
-    _, recon = sig.istft(stft_arr, sample_rate, nperseg=nperseg)
+def stft_to_arr(stft_arr, sample_rate, seg=3000):
+    _, recon = sig.istft(stft_arr, sample_rate, nperseg=seg)
     recon = np.rint(recon).astype(np.int16)
     return recon
 
@@ -74,9 +75,5 @@ if __name__ == '__main__':
     stft = arr_to_stft(audio_arr, rate)
     recon = stft_to_arr(stft, rate)
     test_file = 'reconstructed.wav'
-    scipy.io.wavfile.write(test_file, rate, recon)
-
-
-    #plt.title(str(length) + " seconds")
-    #plt.plot(audio_arr)
-    #plt.show()
+    #scipy.io.wavfile.write(test_file, rate, recon)
+    print(stft.shape)
