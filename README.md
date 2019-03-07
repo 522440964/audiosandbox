@@ -34,6 +34,8 @@
         - Throw out low hz audio.
 
         - Normalize audio between 1 and -1 without silencing the entire clip due to a mic bump or loud sound. (clipping peaks)
+        
+        - format audio from sound pressure level array into short sample spectrograms with overlapping windows for recreation.
 
 <h3>- (Main model)</h3> Base on proven transformer architecture (specifically GPT/GPT-2). 
 <br>GPT-2 Sample Code: https://github.com/openai/gpt-2
