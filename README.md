@@ -1,4 +1,4 @@
-<h1>Outline of steps for attempting NLP with audio instead of text.</h1>
+<h1>Outline of steps for attempting NLP with audio instead of text. *Everything is WIP*</h1>
 
 <h2>The thought process behind the project:</h2>
 
@@ -34,6 +34,8 @@
         - Throw out low hz audio.
 
         - Normalize audio between 1 and -1 without silencing the entire clip due to a mic bump or loud sound. (clipping peaks)
+        
+        - format audio from sound pressure level array into short sample spectrograms with overlapping windows for recreation.
 
 <h3>- (Main model)</h3> Base on proven transformer architecture (specifically GPT/GPT-2). 
 <br>GPT-2 Sample Code: https://github.com/openai/gpt-2
@@ -45,7 +47,7 @@
         - Feed model similar to how entire phrases are fed to GPT, an array of the waveform (of varying length) and
             an array the positional data for that waveform
 
-        - The answer is next N seconds data following the waveform (also varying)
+        - The answer is next N seconds of audio data following the waveform (also varying)
 
 <h3>- Data</h3>
 
