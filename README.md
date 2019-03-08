@@ -64,7 +64,8 @@
         - infomational videos
         - news and talkshows
         - college lectures
-        - audio books.
+        - audio books
+        - Poetry? *could give good data on expression reading
 
 
 <h2>The Plan:</h2>
