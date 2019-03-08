@@ -70,6 +70,7 @@ def stft_to_arr(stft_arr, sample_rate, seg=3000):
 
 
 if __name__ == '__main__':
+    #just for testing
     rate = 36000
     audio_arr, length = audio_to_arr('samples/128k.mp3', rate=rate)
     stft = arr_to_stft(audio_arr, rate)
