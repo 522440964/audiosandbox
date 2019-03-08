@@ -1,4 +1,4 @@
-<h1>Outline of steps for attempting NLP with audio instead of text.</h1>
+<h1>Outline of steps for attempting NLP with audio instead of text. *Everything is WIP*</h1>
 
 <h2>The thought process behind the project:</h2>
 
